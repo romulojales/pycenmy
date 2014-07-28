@@ -10,7 +10,7 @@ run yum install nginx -y
 
 #clean
 add nginx.conf /etc/nginx/nginx.conf
-
+add nginx-supervisor.conf /etc/supervisord.d/
 run mkdir /var/www
 
 run yum clean all -y
@@ -18,7 +18,7 @@ run yum clean all -y
 expose 80
 
 #stating the deamons
-cmd ["/usr/sbin/nginx"]
+cmd ["/usr/bin/supervisord", "-c" ,"/etc/supervisord.conf"]
 
 
 
