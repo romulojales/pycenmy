@@ -9,7 +9,3 @@ run yum install gcc python-devel python-setuptools -y
 run easy_install pip
 run pip install uwsgi
 
-run mkdir -p /var/www/
-
-cmd nginx -s reload
-
